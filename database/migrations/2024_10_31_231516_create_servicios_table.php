@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('servicios', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users','id');
-            $table->foreignId('product_id')->constrained('productos','id');
+            $table->foreignId('user_id')->constrained('users','id')->cascadeOnDelete();
+            $table->foreignId('product_id')->constrained('productos','id')->cascadeOnDelete();
             $table->integer('quantity');
             $table->enum('transaction_type', ['compra', 'venta']);
             $table->timestamps();

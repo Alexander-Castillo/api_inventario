@@ -15,9 +15,6 @@ Route::get('/user', function (Request $request) {
 Route::prefix('V1')->group(function () {
     // Ruta para Login
     Route::post('/login', [LoginController::class, 'login']);
-
-    // ruta para renovar el token
-    Route::post('/token_refresh', [LoginController::class, 'refreshToken']);
     
     // ruta para crear un nuevo usuario
     Route::post('/users/new', [UsersController::class, 'store']);

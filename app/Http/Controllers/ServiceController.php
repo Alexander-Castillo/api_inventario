@@ -32,7 +32,7 @@ class ServiceController extends Controller
                 return response()->json(['message'=>'No hay servicios registrados'], 404);
             }
             // devolver los resultados
-            return response()->json(['Inventario:' , Service::collection($service)], 200);
+            return response()->json(['Inventario:' => $service], 200);
     }
     /**
      * Store a newly created resource in storage.
